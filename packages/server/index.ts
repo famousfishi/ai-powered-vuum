@@ -11,6 +11,10 @@ app.get('/', (req: Request, res: Response) => {
     res.send(process.env.OPENAI_API_KEY ? `API Key is set to: ${process.env.OPENAI_API_KEY}` : "test");
 });
 
+app.get('/api/hello', (req: Request, res: Response) => {
+    res.json({ message: 'Hello from backend server!' });
+});
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
